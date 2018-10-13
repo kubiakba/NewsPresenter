@@ -12,7 +12,7 @@ export class NewsService {
   constructor(private http: HttpClient) {
   }
 
-  public getNews(country: String, category: String): Observable<any[]> {
-    return this.http.get<any[]>(this.news_url + `/${country}/${category}`);
+  public getNews(country: String, category: String): Observable<any> {
+    return this.http.get<any>(this.news_url + `/${country}/${category}`);
   }
 }
