@@ -1,0 +1,10 @@
+{
+  "/news/*": {
+    "target": "http://localhost:8080/news",
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/news": ""
+    }
+  }
+}
