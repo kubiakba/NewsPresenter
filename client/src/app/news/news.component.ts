@@ -25,12 +25,16 @@ import {NewsService} from "../news-service/news-service";
         </div>
         <button class="btn light" (click)="getNews()">Wyszukaj</button>
       </div>
-    </form>`
+    </form>
+    <div *ngIf="news != null">
+      <app-news-view [news]="news"></app-news-view>
+    </div>
+  `
 })
 
 export class NewsComponent {
 
-  news: NewsDto[] = [];
+  news: NewsDto;
   countries: String[] = ["ae", "ar", "at", "au", "be", "bg", "br", "ca", "ch", "cn", "co", "cu", "cz", "de", "eg", "fr", "gb", "gr", "hk", "hu", "id", "ie", "il", "in", "it", "jp", "kr", "lt", "lv", "ma", "mx", "my", "ng", "nl", "no", "nz", "ph", "pl", "pt", "ro", "rs", "ru", "sa", "se", "sg", "si", "sk", "th", "tr", "tw", "ua", "us", "ve", "za"];
   country: String = "pl";
   category: String = "";
@@ -39,8 +43,8 @@ export class NewsComponent {
   }
 
   getNews() {
-    this.newsService.getNews(this.country, this.category).subscribe(newsArray => {
-      Array.from(newsArray).forEach(news => this.news.push(new NewsDto(news)));
+    this.newsService.getNews(this.country, this.category).subscribe(news => {
+      this.news = new NewsDto(news);
     });
   }
 }

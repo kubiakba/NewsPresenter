@@ -4,11 +4,13 @@ import {NewsComponent} from './news/news.component';
 import {HttpClientModule} from "@angular/common/http";
 import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
+import { NewsViewComponent } from './news-view/news-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewsComponent
+    NewsComponent,
+    NewsViewComponent
   ],
   imports: [
     BrowserModule,
