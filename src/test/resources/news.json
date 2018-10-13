@@ -1,0 +1,32 @@
+{
+    "status": "ok",
+    "totalResults": 6981,
+    "articles": [
+        {
+            "source": {
+                "id": "techcrunch",
+                "name": "TechCrunch"
+            },
+            "author": "Joyce Yang",
+            "title": "The 21-day bitcoin challenge",
+            "description": "There is a documentary series currently airing on iQiyi, China’s Netflix equivalent, about a Chinese bitcoin enthusiast who attempts to survive 21 days by merely living on 0.21 bitcoin, or $1,300, without any help or donations. He You Bing is traveling and ca…",
+            "url": "http://techcrunch.com/2018/09/16/the-21-day-bitcoin-challenge/",
+            "urlToImage": "https://techcrunch.com/wp-content/uploads/2018/09/Screen-Shot-2018-09-16-at-8.57.40-AM.png?w=745",
+            "publishedAt": "2018-09-16T13:11:12Z",
+            "content": "There is a documentary series currently airing on iQiyi, China’s Netflix equivalent, about a Chinese bitcoin enthusiast who attempts to survive 21 days by merely living on 0.21 bitcoin, or $1,300, without any help or donations. He You Bing is traveling and ca… [+8480 chars]"
+        },
+        {
+            "source": {
+                "id": "techcrunch",
+                "name": "TechCrunch"
+            },
+            "author": "Danny Crichton",
+            "title": "The second blockchain bubble is now complete – what’s next?",
+            "description": "The last few months haven’t been easy for crypto investors. Following the dizzying highs of crypto trading late last year, which saw Bitcoin reach a peak of $19,276 and a market cap of $323 billion and Ether reach $1,152 with a market cap of more than $112 bi…",
+            "url": "http://techcrunch.com/2018/09/13/the-second-blockchain-bubble-is-now-complete-whats-next/",
+            "urlToImage": "https://techcrunch.com/wp-content/uploads/2018/09/GettyImages-809812328.jpg?w=611",
+            "publishedAt": "2018-09-13T20:57:57Z",
+            "content": "The last few months haven’t been easy for crypto investors. Following the dizzying highs of crypto trading late last year, which saw Bitcoin reach a peak of $19,276 and a market cap of $323 billion and Ether reach $1,152 with a market cap of more than $112 bi… [+6710 chars]"
+        }
+    ]
+}
