@@ -32,8 +32,7 @@ import {ArticleDto} from "../dto/article-dto";
         <td><a href="{{article.imageUrl}}">{{article.imageUrl}}</a></td>
       </tr>
       </tbody>
-    </table>`,
-  styleUrls: ['./news-view.component.css']
+    </table>`
 })
 export class NewsViewComponent implements OnChanges {
 
