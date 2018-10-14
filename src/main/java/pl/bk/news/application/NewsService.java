@@ -2,7 +2,7 @@ package pl.bk.news.application;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
-import okhttp3.Call;
+import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -30,15 +30,21 @@ public class NewsService
     @SneakyThrows
     public NewsDto getNews(String country, String category)
     {
-        Request request = new Request.Builder()
-            .get()
-            .url("https://newsapi.org/v2/top-headlines?country=" + country + "&category=" + category + "&apiKey=" + news_key)
-            .build();
+        final HttpUrl url = getHttpUrl(country, category);
+        final Request request = new Request.Builder().url(url).build();
+        final Response response = client.newCall(request).execute();
         
-        Call call = client.newCall(request);
-        final Response response = call.execute();
-        final News news = mapper.readValue(response.body().string(), News.class);
-        return newsParser.parse(news, country, category);
+        return newsParser.parse(mapper.readValue(response.body().string(), News.class), country, category);
+    }
+    
+    private HttpUrl getHttpUrl(String country, String category)
+    {
+        return HttpUrl.parse("https://newsapi.org/v2/top-headlines")
+                      .newBuilder()
+                      .setQueryParameter("country", country)
+                      .setQueryParameter("category", category)
+                      .setQueryParameter("apiKey", news_key)
+                      .build();
     }
     
 }
