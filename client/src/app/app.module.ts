@@ -1,10 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 import {NewsComponent} from './news/news.component';
 import {HttpClientModule} from "@angular/common/http";
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 import {FormsModule} from "@angular/forms";
-import { NewsViewComponent } from './news-view/news-view.component';
+import {NewsViewComponent} from './news-view/news-view.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -15,9 +16,11 @@ import { NewsViewComponent } from './news-view/news-view.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -20,7 +20,7 @@ import {ArticleDto} from "../dto/article-dto";
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let article of articles">
+      <tr *ngFor="let article of articles | paginate: { itemsPerPage: 3, currentPage: p };">
         <td>{{news.country}}</td>
         <td>{{news.category}}</td>
         <td>{{article.author}}</td>
@@ -33,12 +33,14 @@ import {ArticleDto} from "../dto/article-dto";
       </tr>
       </tbody>
     </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
   `,
   styleUrls: ['./news-component.css']
 })
 export class NewsViewComponent implements OnChanges {
 
   @Input() news: NewsDto;
+  p: number = 1;
   articles: ArticleDto[] = [];
 
   ngOnChanges(changes: SimpleChanges): void {
