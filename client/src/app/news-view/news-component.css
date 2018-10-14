@@ -1,0 +1,6 @@
+table th, td
+{
+  max-width: 90px;
+  word-break: break-all;
+  padding: 3px;
+}

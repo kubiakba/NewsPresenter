@@ -5,7 +5,7 @@ import {ArticleDto} from "../dto/article-dto";
 @Component({
   selector: 'app-news-view',
   template: `
-    <table class="table table-striped">
+    <table width="100%" style='font-family:"Courier New", Courier, monospace; font-size:80%' class="table table-striped">
       <thead>
       <tr>
         <th>kraj</th>
@@ -32,7 +32,9 @@ import {ArticleDto} from "../dto/article-dto";
         <td><a href="{{article.imageUrl}}">{{article.imageUrl}}</a></td>
       </tr>
       </tbody>
-    </table>`
+    </table>
+  `,
+  styleUrls: ['./news-component.css']
 })
 export class NewsViewComponent implements OnChanges {
 
