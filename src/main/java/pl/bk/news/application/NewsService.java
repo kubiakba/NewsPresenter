@@ -11,6 +11,8 @@ import org.springframework.stereotype.Component;
 import pl.bk.news.api.dto.NewsDto;
 import pl.bk.news.external.news.dto.News;
 
+import static pl.bk.news.application.validators.CountryValidator.isNameValid;
+
 @Component
 public class NewsService
 {
@@ -30,6 +32,7 @@ public class NewsService
     @SneakyThrows
     public NewsDto getNews(String country, String category)
     {
+        isNameValid(country);
         final HttpUrl url = getHttpUrl(country, category);
         final Request request = new Request.Builder().url(url).build();
         final Response response = client.newCall(request).execute();
