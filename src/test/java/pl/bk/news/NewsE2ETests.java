@@ -22,10 +22,10 @@ import static pl.bk.news.application.exception.ErrorCode.INVALID_COUNTRY_NAME;
 public class NewsE2ETests
 {
     @Autowired
-    OkHttpClient client;
+    private OkHttpClient client;
     
     @Autowired
-    ObjectMapper mapper;
+    private ObjectMapper mapper;
     
     @Test
     public void shouldReturn200WhenCallingApi() throws IOException

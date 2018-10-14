@@ -15,8 +15,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class NewsApplicationTests
 {
-    BufferedReader reader;
-    ObjectMapper mapper = new ObjectMapper();
+    private BufferedReader reader;
+    private final ObjectMapper mapper = new ObjectMapper();
     
     @Before
     public void setup()
