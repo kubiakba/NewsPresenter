@@ -16,11 +16,11 @@ import static pl.bk.news.application.validators.CountryValidator.isNameValid;
 @Component
 public class NewsService
 {
-    @Value("${news_key}")
-    private String news_key;
     private final OkHttpClient client;
     private final ObjectMapper mapper;
     private final NewsParser newsParser;
+    @Value("${news_key}")
+    private String news_key;
     
     public NewsService(OkHttpClient client, ObjectMapper mapper, NewsParser newsParser)
     {

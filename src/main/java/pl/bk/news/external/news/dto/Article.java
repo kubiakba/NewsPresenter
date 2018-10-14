@@ -1,4 +1,3 @@
-
 package pl.bk.news.external.news.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
