@@ -5,29 +5,28 @@ import {NewsService} from "../news-service/news-service";
 @Component({
   selector: 'app-news',
   template: `
-    <form>
-      <div class="form-group col-md-2">
-        <div>
-          <label for="category">Kategoria</label>
-          <input [(ngModel)]="category" name="category" type="text" list="categories" class="form-control"/>
+    <div style="background-color: #B9D3EE">
+      <br/>
+      <form class="form-inline">
+        <div class="form-group">
+          <input [(ngModel)]="category" name="category" type="text" list="categories" class="form-control" placeholder="category"/>
           <datalist id="categories">
             <option>sports</option>
             <option>finance</option>
           </datalist>
         </div>
-        <div>
-          <label for="country">Kraj</label>
+        <div class="form-group">
           <select [(ngModel)]="country" name="country" id="country" class="form-control">
             <option *ngFor="let country of countries">
               {{country}}
             </option>
           </select>
+          <button class="form-group mx-2 btn btn-md light" (click)="getNews()">find</button>
         </div>
-        <button class="btn light" (click)="getNews()">Wyszukaj</button>
+      </form>
+      <div *ngIf="news != null">
+        <app-news-view [news]="news"></app-news-view>
       </div>
-    </form>
-    <div *ngIf="news != null">
-      <app-news-view [news]="news"></app-news-view>
     </div>
   `
 })
